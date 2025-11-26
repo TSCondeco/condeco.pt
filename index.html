@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomás Condeço</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            /* Tema Escuro (Padrão) */
+            --bg-color: #111111;
+            --text-color: #EAEAEA;
+            --heading-color: #FFFFFF;
+            --link-color: #60A5FA;
+            --meta-color: #A3A3A3;
+            --border-color: #333333;
+            --code-bg: #1F2937;
+        }
+
+        /* Tema Claro */
+        [data-theme="light"] {
+            --bg-color: #FAFAFA;
+            --text-color: #374151;
+            --heading-color: #111827;
+            --link-color: #2563EB;
+            --meta-color: #6B7280;
+            --border-color: #E5E7EB;
+            --code-bg: #F3F4F6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        a { color: var(--link-color); text-decoration: none; cursor: pointer; }
+        a:hover { text-decoration: underline; }
+
+        h1, h2, h3, strong { color: var(--heading-color); font-weight: 600; }
+
+        .container-custom {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            position: relative;
+        }
+
+        .section-header {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: var(--heading-color);
+        }
+
+        .text-meta { color: var(--meta-color); }
+        .text-heading { color: var(--heading-color); }
+
+        .theme-toggle {
+            position: absolute;
+            top: 2rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--meta-color);
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: color 0.2s, background-color 0.2s;
+        }
+        .theme-toggle:hover {
+            color: var(--heading-color);
+            background-color: var(--border-color);
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+<div class="container-custom">
+
+    <!-- Mudar tema -->
+    <button id="theme-btn" class="theme-toggle" aria-label="Mudar Tema">
+        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+
+    <!-- Cabeçalho -->
+    <header class="mb-8">
+        <h1 class="text-3xl mb-4 tracking-tight">Tomás Condeço</h1>
+        <div class="text-meta space-y-4">
+            <p>
+                Sou estudante de Engenharia Informática, no ISEL - Instituto Superior de Engenharia de Lisboa. Interesso-me pelo desenvolvimento de aplicações que simplificam e automatizam a minha vida.
+            </p>
+        </div>
+        <div class="mt-6 space-x-4 text-sm">
+            <a href="mailto:tomascondeco@proton.me">Email</a>
+            <a href="https://github.com/TSCondeco">GitHub</a>
+            <a href="https://www.linkedin.com/in/tomascondeco/">LinkedIn</a>
+        </div>
+    </header>
+
+    <!-- Secção Now -->
+    <section>
+        <h2 class="section-header">Agora</h2>
+        <div class="space-y-2 text-meta">
+            <div>
+                <span class="text-heading font-semibold">A criar:</span>
+                PreRow, aplicação de previsão meteorológica para remo.
+            </div>
+            <div>
+                <span class="text-heading font-semibold">A aprender:</span>
+                Desenvolvimento em Android e Compose Multiplatform.
+            </div>
+            <div>
+                <span class="text-heading font-semibold">A ler:</span>
+                <em>Porque falham as Nações</em>, Daron Acemoglu e James A. Robinson.
+            </div>
+        </div>
+        <p class="text-xs text-meta italic mt-4">Atualizado em 26 de Novembro 2025</p>
+    </section>
+
+
+    <!-- Secção Projetos -->
+    <section>
+        <h2 class="section-header">Projetos</h2>
+
+        <div class="project-item">
+            <div><a href="https://github.com/TSCondeco/PreRow" class="project-title"><span class="text-heading font-semibold">PreRow</span></a><span class="text-meta text-sm ml-2">// 2025</span></div>
+            <div class="project-desc">Plataforma Meteorológica de previsão de condições para a prática de remo.</div>
+        </div>
+
+        <div class="project-item">
+            <div><a href="https://github.com/TSCondeco/RowVert" class="project-title"><span class="text-heading font-semibold">RowVert</span></a><span class="text-meta text-sm ml-2">// 2025</span></div>
+            <div class="project-desc">Ferramenta de conversão de unidades de remo.</div>
+        </div>
+
+        <div class="project-item">
+            <div><a href="https://github.com/TSCondeco/Vogal" class="project-title"><span class="text-heading font-semibold">Vogal</span></a><span class="text-meta text-sm ml-2">// 2025</span></div>
+            <div class="project-desc">Contador de remadas em Arduino para treino de remo com sensor ultrassónico.</div>
+        </div>
+
+    </section>
+
+    <footer class="mt-16 pt-8 border-t border-gray-800 text-meta text-sm">
+        <p>Tomás Condeço | 2025</p>
+    </footer>
+
+</div>
+
+<script>
+
+    const themeBtn = document.getElementById('theme-btn');
+    const sunIcon = document.getElementById('icon-sun');
+    const moonIcon = document.getElementById('icon-moon');
+    const html = document.documentElement;
+
+    function getPreferredTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+    return savedTheme;
+}
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+    function setTheme(theme) {
+    if (theme === 'light') {
+    html.setAttribute('data-theme', 'light');
+    sunIcon.classList.add('hidden');
+    moonIcon.classList.remove('hidden');
+} else {
+    html.removeAttribute('data-theme');
+    moonIcon.classList.add('hidden');
+    sunIcon.classList.remove('hidden');
+}
+    localStorage.setItem('theme', theme);
+}
+
+    let currentTheme = getPreferredTheme();
+    setTheme(currentTheme);
+
+    themeBtn.addEventListener('click', () => {
+    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+    setTheme(currentTheme);
+});
+</script>
+</body>
+</html>
